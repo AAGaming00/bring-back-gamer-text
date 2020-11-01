@@ -1,11 +1,11 @@
-const { Plugin } = require('@entities');
-const { Messages } = require('@i18n');
+const { Plugin } = require('powercord/entities');
+const { i18n: { Messages } } = require('powercord/webpack');
 
 const i18n = require('./i18n');
 
 module.exports = class BringBackGamerTexts extends Plugin {
-  onStart () {
-    vizality.api.i18n.loadAllStrings(i18n);
+  startPlugin () {
+    powercord.api.i18n.loadAllStrings(i18n);
 
     // Strings that are the same in every language
     Messages.VERIFICATION_LEVEL_HIGH = "(╯°□°）╯︵ ┻━┻";
